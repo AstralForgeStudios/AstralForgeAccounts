@@ -1,0 +1,12 @@
+name = "astralforge-accounts"
+compatibility_date = "2026-06-05"
+compatibility_flags = ["nodejs_compat"]
+
+pages_build_output_dir = ".vercel/output/static"
+
+[vars]
+NEXT_PUBLIC_SITE_NAME = "Astral Forge Accounts"
+NEXT_PUBLIC_SITE_URL = "https://accounts.astralforge.studio"
+NEXT_PUBLIC_API_URL = "https://api.astralforge.studio"
+NEXT_PUBLIC_AUTH_URL = "https://auth.astralforge.studio"
+NEXT_PUBLIC_HOME_URL = "https://astralforge.studio"

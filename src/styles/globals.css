@@ -1,0 +1,298 @@
+/* src/styles/globals.css */
+
+/* ------------------------------------------------ */
+/* Tailwind */
+/* ------------------------------------------------ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------ */
+/* Root Theme */
+/* ------------------------------------------------ */
+
+:root {
+  --forge-gold: #d4af37;
+  --forge-gold-dark: #b38f28;
+
+  --forge-bg: #0a0a0d;
+  --forge-card: #111116;
+  --forge-dark: #15151b;
+
+  --forge-border: #26262f;
+
+  --forge-silver: #a1a1aa;
+
+  --forge-success: #22c55e;
+  --forge-warning: #facc15;
+  --forge-danger: #ef4444;
+  --forge-info: #3b82f6;
+
+  --header-height: 72px;
+  --sidebar-width: 280px;
+}
+
+/* ------------------------------------------------ */
+/* Reset */
+/* ------------------------------------------------ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background: var(--forge-bg);
+  color: white;
+
+  font-family:
+    Inter,
+    system-ui,
+    sans-serif;
+
+  line-height: 1.5;
+
+  text-rendering: optimizeLegibility;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+/* ------------------------------------------------ */
+/* Typography */
+/* ------------------------------------------------ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.25rem;
+}
+
+h2 {
+  font-size: 1.875rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  color: var(--forge-silver);
+}
+
+/* ------------------------------------------------ */
+/* Selection */
+/* ------------------------------------------------ */
+
+::selection {
+  background: var(--forge-gold);
+  color: black;
+}
+
+/* ------------------------------------------------ */
+/* Scrollbars */
+/* ------------------------------------------------ */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--forge-gold) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--forge-gold);
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--forge-gold-dark);
+}
+
+/* ------------------------------------------------ */
+/* Focus States */
+/* ------------------------------------------------ */
+
+:focus-visible {
+  outline: 2px solid var(--forge-gold);
+  outline-offset: 2px;
+}
+
+/* ------------------------------------------------ */
+/* Layout Helpers */
+/* ------------------------------------------------ */
+
+.container-forge {
+  width: 100%;
+  max-width: 1600px;
+
+  margin-inline: auto;
+
+  padding-inline: 1.5rem;
+}
+
+.page-section {
+  margin-top: 2rem;
+}
+
+.page-title {
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.page-subtitle {
+  margin-top: 0.5rem;
+  color: var(--forge-silver);
+}
+
+/* ------------------------------------------------ */
+/* Cards */
+/* ------------------------------------------------ */
+
+.forge-card {
+  background: var(--forge-card);
+
+  border: 1px solid var(--forge-border);
+
+  border-radius: 1rem;
+
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* ------------------------------------------------ */
+/* Utilities */
+/* ------------------------------------------------ */
+
+.text-gold {
+  color: var(--forge-gold);
+}
+
+.text-silver {
+  color: var(--forge-silver);
+}
+
+.text-success {
+  color: var(--forge-success);
+}
+
+.text-warning {
+  color: var(--forge-warning);
+}
+
+.text-danger {
+  color: var(--forge-danger);
+}
+
+.text-info {
+  color: var(--forge-info);
+}
+
+.border-gold {
+  border-color: var(--forge-gold);
+}
+
+.bg-card {
+  background: var(--forge-card);
+}
+
+.bg-dark {
+  background: var(--forge-dark);
+}
+
+.shadow-forge {
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* ------------------------------------------------ */
+/* Animations */
+/* ------------------------------------------------ */
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.25s ease-out;
+}

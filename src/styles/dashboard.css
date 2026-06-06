@@ -1,0 +1,233 @@
+/* src/styles/dashboard.css */
+
+.dashboard-page {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.dashboard-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.dashboard-sidebar {
+  width: 280px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--forge-border);
+  background: rgba(15, 15, 18, 0.98);
+}
+
+.dashboard-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.dashboard-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid var(--forge-border);
+  background: rgba(15, 15, 18, 0.95);
+  backdrop-filter: blur(12px);
+}
+
+.dashboard-main {
+  flex: 1;
+  padding: 2rem;
+}
+
+.dashboard-footer {
+  border-top: 1px solid var(--forge-border);
+  padding: 1rem 2rem;
+}
+
+.dashboard-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.dashboard-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.dashboard-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.dashboard-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.dashboard-card {
+  border: 1px solid var(--forge-border);
+  border-radius: 1rem;
+  background: rgba(15, 15, 18, 0.92);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.dashboard-card-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--forge-border);
+}
+
+.dashboard-card-body {
+  padding: 1.5rem;
+}
+
+.dashboard-card-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--forge-border);
+}
+
+.dashboard-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.dashboard-stat-label {
+  color: var(--forge-silver);
+  font-size: 0.875rem;
+}
+
+.dashboard-stat-value {
+  color: white;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.dashboard-widget {
+  border: 1px solid var(--forge-border);
+  border-radius: 1rem;
+  background: rgba(15, 15, 18, 0.92);
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.dashboard-widget:hover {
+  border-color: rgba(212, 175, 55, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.12);
+}
+
+.dashboard-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.dashboard-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  padding: 0.875rem 1rem;
+
+  border-radius: 0.75rem;
+
+  color: var(--forge-silver);
+
+  text-decoration: none;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.dashboard-nav-link:hover {
+  background: rgba(212, 175, 55, 0.08);
+  color: var(--forge-gold);
+}
+
+.dashboard-nav-link-active {
+  background: rgba(212, 175, 55, 0.12);
+  color: var(--forge-gold);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.dashboard-avatar {
+  border-radius: 9999px;
+  overflow: hidden;
+  border: 1px solid var(--forge-border);
+}
+
+.dashboard-banner {
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 1px solid var(--forge-border);
+}
+
+.dashboard-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dashboard-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--forge-gold) transparent;
+}
+
+.dashboard-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dashboard-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dashboard-scroll::-webkit-scrollbar-thumb {
+  background: var(--forge-gold);
+  border-radius: 999px;
+}
+
+.dashboard-scroll::-webkit-scrollbar-thumb:hover {
+  background: #c89c24;
+}
+
+@media (max-width: 1280px) {
+  .dashboard-grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1024px) {
+  .dashboard-sidebar {
+    width: 240px;
+  }
+
+  .dashboard-grid-3,
+  .dashboard-grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-shell {
+    flex-direction: column;
+  }
+
+  .dashboard-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--forge-border);
+  }
+
+  .dashboard-main {
+    padding: 1rem;
+  }
+
+  .dashboard-grid-2,
+  .dashboard-grid-3,
+  .dashboard-grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-footer {
+    padding: 1rem;
+  }
+}
