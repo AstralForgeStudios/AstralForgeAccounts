@@ -1,4 +1,8 @@
+import type { ComponentProps } from "react";
+
 import ProfileHeader from "@/components/dashboard/ProfileHeader";
+import DashboardWidgetContainer from "@/components/dashboard/DashboardWidgetContainer";
+
 import AboutCard from "@/components/dashboard/AboutCard";
 import AccountOverviewCard from "@/components/dashboard/AccountOverviewCard";
 import RecentActivityCard from "@/components/dashboard/RecentActivityCard";
@@ -8,31 +12,55 @@ import CommunityCard from "@/components/dashboard/CommunityCard";
 import AchievementsCard from "@/components/dashboard/AchievementsCard";
 import StatisticsCard from "@/components/dashboard/StatisticsCard";
 
-export default function DashboardPage() {
+type Activity =
+  ComponentProps<typeof RecentActivityCard>["activities"][number];
+
+type Statistic =
+  ComponentProps<typeof StatisticsCard>["statistics"][number];
+
+export default function HomePage() {
+  const activities: Activity[] = [];
+
+  const statistics: Statistic[] = [];
+
   return (
     <main className="min-h-screen px-6 py-8">
       <div className="mx-auto w-full max-w-7xl space-y-6">
-        <ProfileHeader />
+        <ProfileHeader
+          avatarUrl={null}
+          bannerUrl={null}
+          displayName="Astral Forge User"
+          username="user"
+          tier="Initiate"
+          memberSince="June 2026"
+        />
 
-        <section className="grid gap-6 lg:grid-cols-2">
+        <DashboardWidgetContainer>
           <AboutCard />
+
           <AccountOverviewCard />
-        </section>
 
-        <section className="grid gap-6 lg:grid-cols-2">
-          <RecentActivityCard />
-          <OwnedContentCard />
-        </section>
+          <RecentActivityCard
+            activities={activities}
+          />
 
-        <section className="grid gap-6 lg:grid-cols-2">
+          <OwnedContentCard
+            worldsCount={0}
+            campaignsCount={0}
+            articlesCount={0}
+            productsCount={0}
+          />
+
           <CreatorDashboardCard />
-          <CommunityCard />
-        </section>
 
-        <section className="grid gap-6 lg:grid-cols-2">
+          <CommunityCard />
+
           <AchievementsCard />
-          <StatisticsCard />
-        </section>
+
+          <StatisticsCard
+            statistics={statistics}
+          />
+        </DashboardWidgetContainer>
       </div>
     </main>
   );
