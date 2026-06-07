@@ -1,3 +1,5 @@
+"use client";
+
 import type { ComponentProps } from "react";
 
 import SecurityOverview from "@/components/security/SecurityOverview";
